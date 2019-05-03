@@ -65,7 +65,7 @@ def main():
          box = obj.bounding_box.flatten().tolist()
          #print ('box = ', box)
          # Draw a rectangle.
-         draw_rectangle(draw, box, 'red', width=5)
+         draw_rectangle(draw, box, 'red', width=15)
          if labels:
            draw.text((box[0] + 20, box[1] + 20), labels[obj.label_id], fill='red', font=helvetica)
     img.save(output_name)
