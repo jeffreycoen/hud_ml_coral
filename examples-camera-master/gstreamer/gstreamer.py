@@ -42,6 +42,8 @@ def on_new_sample(sink, overlay, screen_size, appsink_size, user_function):
     sample = sink.emit('pull-sample')
     buf = sample.get_buffer()
     result, mapinfo = buf.map(Gst.MapFlags.READ)
+    print("the screen size is ")
+    print(screen_size)
     if result:
       img = Image.frombytes('RGB', (appsink_size[0], appsink_size[1]), mapinfo.data, 'raw')
       svg_canvas = svgwrite.Drawing('', size=(screen_size[0], screen_size[1]))
@@ -101,12 +103,12 @@ def run_pipeline(user_function,
     print (src_size)
     print("the appsink size is ")
     print (appsink_size)
-    print("the screen size is ")
+    #print("the screen size is ")
     # print (screen_size)
     appsink.connect('new-sample', partial(on_new_sample,
         overlay=overlay, screen_size = src_size,
 	appsink_size=appsink_size, user_function=user_function))
-    print (screen_size)
+    #print (screen_size)
         
     loop = GObject.MainLoop()
 
