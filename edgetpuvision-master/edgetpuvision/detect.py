@@ -28,8 +28,8 @@ from .apps import run_app
 CSS_STYLES = str(svg.CssStyle({'.back': svg.Style(fill='black',
                                                   stroke='black',
                                                   stroke_width='10em'),
-                               '.bbox': svg.Style(fill_opacity=0.0,
-                                                  stroke_width='5px')}))
+                               '.bbox': svg.Style(fill_opacity=1.0,
+                                                  stroke_width='25px')}))
 
 BBox = collections.namedtuple('BBox', ('x', 'y', 'w', 'h'))
 BBox.area = lambda self: self.w * self.h
