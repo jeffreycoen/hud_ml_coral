@@ -74,7 +74,7 @@ class Line(Tag):
 
 class Rect(Tag):
     NAME = 'rect'
-    REQUIRED_ATTRS = ('x', 'y', 'width', 'height')
+    REQUIRED_ATTRS = ('x', 'y', 'width', 'height', 'stroke_width')
 
 class Circle(Tag):
     NAME = 'circle'
