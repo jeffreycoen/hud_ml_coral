@@ -29,7 +29,7 @@ CSS_STYLES = str(svg.CssStyle({'.back': svg.Style(fill='black',
                                                   stroke='black',
 						#stroke_width='10em'),
                                                   stroke_width='25px'),
-                               '.bbox': svg.Style(fill_opacity=1.0,
+                               '.bbox': svg.Style(fill_opacity=1.0, stroke='black',
                                                   stroke_width='25px')}))
 
 BBox = collections.namedtuple('BBox', ('x', 'y', 'w', 'h'))
