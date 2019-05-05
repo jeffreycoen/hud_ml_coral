@@ -44,7 +44,7 @@ Object.__str__ = lambda self: 'Object(id=%d, label=%s, score=%.2f, %s)' % self
 centerPts = deque(maxlen=30) 
 
 def size_em(length):
-    return '%sem' % str(5.6 * length)
+    return '%sem' % str(0.6 * length)
 
 def color(i, total):
     return tuple(int(255.0 * c) for c in colorsys.hsv_to_rgb(i / total, 1.0, 1.0))
@@ -89,7 +89,7 @@ def overlay(title, objs, get_color, inference_time, inference_rate, layout):
                         width=size_em(len(caption)), height='1.2em', fill=color )
         #center 
         center = ((x+w/2),(y+h/2))
-        doc += svg.Circle(cx=center[0],cy=center[1],r=5, style='stroke:%s' % color)
+        doc += svg.Circle(cx=center[0],cy=center[1],r=25, style='stroke:%s' % color)
 
         centerPts.append(center)
 
