@@ -98,7 +98,8 @@ def main():
       generate_svg(svg_canvas, objs, labels, text_lines)
 
     #result = gstreamer.run_pipeline(user_callback)
-	result = user_callback
+    result = user_callback
 
 if __name__ == '__main__':
     main()
+
