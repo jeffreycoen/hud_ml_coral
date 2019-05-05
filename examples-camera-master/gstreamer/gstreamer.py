@@ -61,7 +61,8 @@ def detectCoralDevBoard():
   return False
 
 def run_pipeline(user_function,
-                 src_size=(640,480),
+                 src_size=(1920,1080),
+		 # src_size=(640,480),
                  appsink_size=(320, 180)):
 		 # appsink_size=(640, 360)):
 		 
