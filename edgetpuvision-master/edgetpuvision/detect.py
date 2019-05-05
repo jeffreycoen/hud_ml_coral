@@ -94,7 +94,7 @@ def overlay(title, objs, get_color, inference_time, inference_rate, layout):
         centerPts.append(center)
 
         for i in range(1, len(centerPts)):
-            doc += svg.Line(x1=centerPts[i-1][0],y1=centerPts[i-1][1],x2=centerPts[i][0],y2=centerPts[i][1], style='stroke:%s' % color)
+            doc += svg.Line(x1=centerPts[i-1][0],y1=centerPts[i-1][1],x2=centerPts[i][0],y2=centerPts[i][1], style='stroke:%s' % color, stroke_width=25)
             #print(centerPts[i-1][0],centerPts[i-1][1])
         #print(centerPts)
 

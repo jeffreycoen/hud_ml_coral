@@ -8,4 +8,9 @@ python3 -m edgetpuvision.detect \
     --model ${MODELS}/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite \
     --labels ${MODELS}/coco_labels.txt \
     --top_k 3 \
-    --threshold 0.7
+    --threshold 0.7 \
+    --color red
+
+python3 -m edgetpuvision.classify \
+  --model ${MODELS}/mobilenet_v2_1.0_224_inat_bird_quant.tflite \
+  --labels ${MODELS}/inat_bird_labels.txt
