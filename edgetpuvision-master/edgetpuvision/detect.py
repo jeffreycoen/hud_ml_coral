@@ -44,7 +44,7 @@ Object.__str__ = lambda self: 'Object(id=%d, label=%s, score=%.2f, %s)' % self
 centerPts = deque(maxlen=30) 
 
 def size_em(length):
-    return '%sem' % str(0.6 * length)
+    return '%sem' % str(5.6 * length)
 
 def color(i, total):
     return tuple(int(255.0 * c) for c in colorsys.hsv_to_rgb(i / total, 1.0, 1.0))
