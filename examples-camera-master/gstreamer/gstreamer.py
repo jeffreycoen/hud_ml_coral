@@ -102,10 +102,11 @@ def run_pipeline(user_function,
     print("the appsink size is ")
     print (appsink_size)
     print("the screen size is ")
-    print (screen_size)
+    # print (screen_size)
     appsink.connect('new-sample', partial(on_new_sample,
         overlay=overlay, screen_size = src_size,
 	appsink_size=appsink_size, user_function=user_function))
+    print (screen_size)
         
     loop = GObject.MainLoop()
 
