@@ -2,11 +2,11 @@ import argparse
 import logging
 import signal
 
-from camera import make_camera
-from gstreamer import Display, run_gen
-from streaming.server import StreamingServer
+from .camera import make_camera
+from .gstreamer import Display, run_gen
+from .streaming.server import StreamingServer
 
-import svg
+from . import svg
 
 EMPTY_SVG = str(svg.Svg())
 
