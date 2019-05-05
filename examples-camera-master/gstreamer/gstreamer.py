@@ -42,8 +42,8 @@ def on_new_sample(sink, overlay, screen_size, appsink_size, user_function):
     sample = sink.emit('pull-sample')
     buf = sample.get_buffer()
     result, mapinfo = buf.map(Gst.MapFlags.READ)
-    print("the screen size is ")
-    print(screen_size)
+    #print("the screen size is ")
+    #print(screen_size)
     if result:
       img = Image.frombytes('RGB', (appsink_size[0], appsink_size[1]), mapinfo.data, 'raw')
       svg_canvas = svgwrite.Drawing('', size=(screen_size[0], screen_size[1]))
@@ -120,7 +120,7 @@ def run_pipeline(user_function,
     bus.connect('message', on_bus_message, loop)
 
     # Run pipeline.
-    pipeline.set_state(Gst.State.PLAYING)
+    pipeline.set_state(Gst.State.PAUSED)
     #pipeline.set_state(Gst.State.PLAYING)
     try:
         loop.run()
