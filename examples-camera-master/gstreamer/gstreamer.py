@@ -103,8 +103,8 @@ def run_pipeline(user_function,
     print (appsink_size)
     appsink.connect('new-sample', partial(on_new_sample,
         overlay=overlay, screen_size = src_size,
-	# appsink_size=appsink_size, user_function=user_function))
-        appsink_size=src_size, user_function=user_function))
+	appsink_size=appsink_size, user_function=user_function))
+        
     loop = GObject.MainLoop()
 
     # Set up a pipeline bus watch to catch errors.

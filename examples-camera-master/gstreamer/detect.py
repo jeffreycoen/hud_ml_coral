@@ -82,7 +82,8 @@ def main():
       nonlocal last_time
       start_time = time.monotonic()
       objs = engine.DetectWithImage(image, threshold=args.threshold,
-                                    keep_aspect_ratio=True, relative_coord=True,
+				    # keep_aspect_ratio=True, relative_coord=True,
+                                    keep_aspect_ratio=False, relative_coord=True,
                                     top_k=args.top_k)
       end_time = time.monotonic()
       text_lines = [
