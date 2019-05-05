@@ -54,8 +54,8 @@ def generate_svg(dwg, objs, labels, text_lines):
         x, y, w, h = int(x * width), int(y * height), int(w * width), int(h * height)
         percent = int(100 * obj.score)
         label = '%d%% %s' % (percent, labels[obj.label_id])
-        # shadow_text(dwg, x, y - 5, label)
-	shadow_text(dwg, x, y - 15, label)
+        shadow_text(dwg, x, y - 15, label)
+	# shadow_text(dwg, x, y - 5, label)
         dwg.add(dwg.rect(insert=(x,y), size=(w, h),
                         # fill='red', fill_opacity=0.3, stroke='white'))
 			fill='red', fill_opacity=0.3, stroke='red', stroke_width=10))
