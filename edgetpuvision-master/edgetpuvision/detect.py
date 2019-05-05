@@ -70,7 +70,7 @@ def overlay(title, objs, get_color, inference_time, inference_rate, layout):
 
     doc = svg.Svg(width=width, height=height,
                   viewBox='%s %s %s %s' % layout.window,
-                  font_size='1em', font_family='monospace', font_weight=500)
+                  font_size='1em', font_family='monospace', font_weight=500, stroke_width=20)
     doc += defs
 
     for obj in objs:
