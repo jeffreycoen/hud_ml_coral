@@ -29,7 +29,7 @@ CSS_STYLES = str(svg.CssStyle({'.back': svg.Style(fill='black',
                                                   stroke='black',
                                                   stroke_width='1em'),
                                '.bbox': svg.Style(fill_opacity=0.0,
-                                                  stroke_width='2px')}))
+                                                  stroke_width='10px')}))
 
 BBox = collections.namedtuple('BBox', ('x', 'y', 'w', 'h'))
 BBox.area = lambda self: self.w * self.h
@@ -196,7 +196,7 @@ def add_render_gen_args(parser):
                         help='labels file path')
     parser.add_argument('--top_k', type=int, default=50,
                         help='Max number of objects to detect')
-    parser.add_argument('--threshold', type=float, default=0.1,
+    parser.add_argument('--threshold', type=float, default=0.5,
                         help='Detection threshold')
     parser.add_argument('--min_area', type=float, default=0.0,
                         help='Min bounding box area')
