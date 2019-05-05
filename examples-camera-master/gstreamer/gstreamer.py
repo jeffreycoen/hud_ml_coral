@@ -120,7 +120,7 @@ def run_pipeline(user_function,
     bus.connect('message', on_bus_message, loop)
 
     # Run pipeline.
-    pipeline.set_state(Gst.State.READY)
+    pipeline.set_state(Gst.State.PLAYING)
     #pipeline.set_state(Gst.State.PLAYING)
     try:
         loop.run()
