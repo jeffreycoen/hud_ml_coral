@@ -36,7 +36,7 @@ BBox = collections.namedtuple('BBox', ('x', 'y', 'w', 'h'))
 BBox.area = lambda self: self.w * self.h
 BBox.scale = lambda self, sx, sy: BBox(x=self.x * sx, y=self.y * sy,
                                        w=self.w * sx, h=self.h * sy)
-BBox.__str__ = lambda self: 'BBox(x=%.2f y=%.2f w=%.2f h=%.2f)' % self
+BBox.__str__ = lambda self: 'BBox(x=%1.2f y=%1.2f w=%1.2f h=%1.2f)' % self
 
 Object = collections.namedtuple('Object', ('id', 'label', 'score', 'bbox'))
 Object.__str__ = lambda self: 'Object(id=%d, label=%s, score=%.2f, %s)' % self
