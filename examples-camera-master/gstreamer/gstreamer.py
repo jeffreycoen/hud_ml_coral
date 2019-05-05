@@ -60,8 +60,8 @@ def detectCoralDevBoard():
 
 def run_pipeline(user_function,
                  src_size=(640,480),
-                 # appsink_size=(320, 180)):
-		 appsink_size=(640, 360)):
+                 appsink_size=(320, 180)):
+		 # appsink_size=(640, 360)):
 		 
     PIPELINE = 'v4l2src device=/dev/video0 ! {src_caps} ! {leaky_q}  ! tee name=t'
     if detectCoralDevBoard():
@@ -97,6 +97,8 @@ def run_pipeline(user_function,
 
     overlay = pipeline.get_by_name('overlay')
     appsink = pipeline.get_by_name('appsink')
+    print ("the source size is " + src_size)
+    print ("the appsink size is " + appsink_size)
     appsink.connect('new-sample', partial(on_new_sample,
         overlay=overlay, screen_size = src_size,
         appsink_size=appsink_size, user_function=user_function))
