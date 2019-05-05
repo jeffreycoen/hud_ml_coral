@@ -108,7 +108,7 @@ def run_pipeline(user_function,
     # print (screen_size)
     appsink.connect('new-sample', partial(on_new_sample,
         # changed src_size to appsink_size
-	overlay=overlay, screen_size = src_size,
+	#overlay=overlay, screen_size = src_size,
 	appsink_size=appsink_size, user_function=user_function))
     #print (screen_size)
         
@@ -120,7 +120,7 @@ def run_pipeline(user_function,
     bus.connect('message', on_bus_message, loop)
 
     # Run pipeline.
-    pipeline.set_state(Gst.State.NULL)
+    pipeline.set_state(Gst.State.PLAYING)
     #pipeline.set_state(Gst.State.PLAYING)
     try:
         loop.run()
