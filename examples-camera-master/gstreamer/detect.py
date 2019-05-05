@@ -81,7 +81,7 @@ def main():
     labels = load_labels(args.labels)
 
     last_time = time.monotonic()
-    def user_callback(svg_canvas): #(image, svg_canvas):
+    def user_callback(svg_canvas, svg_canvas): #(image, svg_canvas):
       nonlocal last_time
       start_time = time.monotonic()
       objs = engine.DetectWithImage(image, threshold=args.threshold,
