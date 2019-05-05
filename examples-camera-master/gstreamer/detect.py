@@ -56,7 +56,8 @@ def generate_svg(dwg, objs, labels, text_lines):
         label = '%d%% %s' % (percent, labels[obj.label_id])
         shadow_text(dwg, x, y - 5, label)
         dwg.add(dwg.rect(insert=(x,y), size=(w, h),
-                        fill='red', fill_opacity=0.3, stroke='white'))
+                        # fill='red', fill_opacity=0.3, stroke='white'))
+			fill='red', fill_opacity=1.0, stroke='white'))
 
 def main():
     default_model_dir = '../all_models'
@@ -69,7 +70,8 @@ def main():
                         default=os.path.join(default_model_dir, default_labels))
     parser.add_argument('--top_k', type=int, default=3,
                         help='number of classes with highest score to display')
-    parser.add_argument('--threshold', type=float, default=0.1,
+    # original default threshhold 0.1
+    parser.add_argument('--threshold', type=float, default=0.5,
                         help='class score threshold')
     args = parser.parse_args()
 
