@@ -29,7 +29,7 @@ CSS_STYLES = str(svg.CssStyle({'.back': svg.Style(fill='black',
                                                   stroke='black',
                                                   stroke_width='1em'),
                                '.bbox': svg.Style(fill_opacity=0.0,
-                                                  stroke_width='10px')}))
+                                                  stroke_width='15px')}))
 
 BBox = collections.namedtuple('BBox', ('x', 'y', 'w', 'h'))
 BBox.area = lambda self: self.w * self.h
@@ -69,7 +69,7 @@ def overlay(title, objs, get_color, inference_time, inference_rate, layout):
 
     doc = svg.Svg(width=width, height=height,
                   viewBox='%s %s %s %s' % layout.window,
-                  font_size='1em', font_family='monospace', font_weight=500)
+                  font_size='2em', font_family='monospace', font_weight=500)
     doc += defs
 
     for obj in objs:
