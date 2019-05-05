@@ -97,8 +97,10 @@ def run_pipeline(user_function,
 
     overlay = pipeline.get_by_name('overlay')
     appsink = pipeline.get_by_name('appsink')
-    print ("the source size is " + src_size)
-    print ("the appsink size is " + appsink_size)
+    print("the source size is ")
+    print (src_size)
+    print("the appsink size is ")
+    print (appsink_size)
     appsink.connect('new-sample', partial(on_new_sample,
         overlay=overlay, screen_size = src_size,
         appsink_size=appsink_size, user_function=user_function))
