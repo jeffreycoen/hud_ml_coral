@@ -40,7 +40,7 @@ def load_labels(path):
        lines = (p.match(line).groups() for line in f.readlines())
        return {int(num): text.strip() for num, text in lines}
 
-def shadow_text(dwg, x, y, text, font_size=20):
+def shadow_text(dwg, x, y, text, font_size=60):
     dwg.add(dwg.text(text, insert=(x+1, y+1), fill='black', font_size=font_size))
     dwg.add(dwg.text(text, insert=(x, y), fill='white', font_size=font_size))
 
