@@ -85,7 +85,7 @@ def overlay(title, objs, get_color, inference_time, inference_rate, layout):
         x, y, w, h = obj.bbox.scale(*layout.size)
         color = get_color(obj.id)
 
-        doc += svg.Rect(x=x, y=y, width=w, height=h, , stroke='red', stroke_width=120,
+        doc += svg.Rect(x=x, y=y, width=w, height=h, stroke='red', stroke_width=120,
                         style='stroke:%s' % color, _class='bbox' )
         doc += svg.Rect(x=x, y=y+h , stroke='red', stroke_width=120,
                         width=size_em(len(caption)), height='10.2em', fill='white' )
