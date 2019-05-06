@@ -25,6 +25,8 @@ from . import svg
 from . import utils
 from .apps import run_app
 
+print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
 CSS_STYLES = str(svg.CssStyle({'.back': svg.Style(fill='white',
                                                   stroke='black',
 						#stroke_width='10em'),
