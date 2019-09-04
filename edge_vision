@@ -1,6 +1,6 @@
 export MODELS="$HOME/hud_ml_coral/edgetpuvision-master/edgetpuvision/all_models"
 
-python3 -m edgetpuvision.detect \
+python3 -m edgetpuvision.detect.py \
     --model ${MODELS}/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite \
     --labels ${MODELS}/coco_labels.txt
 
@@ -8,9 +8,30 @@ python3 -m edgetpuvision.detect \
     --model ${MODELS}/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite \
     --labels ${MODELS}/coco_labels.txt \
     --top_k 3 \
-    --threshold 0.7 \
-    --color red
+    --threshold 0.5 \
+    --filter person \
+    --color white
 
 python3 -m edgetpuvision.classify \
   --model ${MODELS}/mobilenet_v2_1.0_224_inat_bird_quant.tflite \
   --labels ${MODELS}/inat_bird_labels.txt
+
+
+location of python files: 
+/usr/lib/python3/dist-packages/edgetpuvision
+
+weston resolution:
+/etc/xdg/weston/
+
+python3 -m edgetpuvision.classify \
+    --model ${MODELS}/mobilenet_v2_1.0_224_quant_edgetpu.tflite \
+    --labels ${MODELS}/imagenet_labels.txt \
+    --top_k 3 \
+    --threshold 0.5
+
+python3 -m edgetpuvision.detect \
+    --model ${MODELS}/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite \
+    --labels ${MODELS}/coco_labels.txt \
+    --top_k 5 \
+    --threshold 0.2 \
+    --color white
